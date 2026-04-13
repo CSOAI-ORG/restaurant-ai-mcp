@@ -1,0 +1,10 @@
+name: restaurant-ai-mcp
+description: "MEOK AI Labs — Built by MEOK AI Labs | https://meok.ai"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/restaurant-ai-mcp
+license: MIT
+categories: [Food & Beverage, Business]
+tags: [restaurant, food-service, menu-management, hospitality, dining]
+runtime: python
+entrypoint: server.py
