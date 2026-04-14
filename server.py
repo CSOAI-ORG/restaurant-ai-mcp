@@ -13,10 +13,7 @@ from typing import Optional
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP(
-    "restaurant-ai",
-    version="1.0.0",
-    description="Restaurant AI - menu optimization, food costs, reservations, reviews, allergens",
-)
+    "restaurant-ai")
 
 # ---------------------------------------------------------------------------
 # Rate limiting
@@ -64,8 +61,7 @@ _RESERVATIONS: list[dict] = []
 @mcp.tool()
 def optimize_menu(
     items: list[dict],
-    target_food_cost_pct: float = 30.0,
-) -> dict:
+    target_food_cost_pct: float = 30.0) -> dict:
     """Analyze and optimize a menu for profitability.
 
     Args:
@@ -147,8 +143,7 @@ def optimize_menu(
 def calculate_food_cost(
     ingredients: list[dict],
     portions: int = 1,
-    target_price: Optional[float] = None,
-) -> dict:
+    target_price: Optional[float] = None) -> dict:
     """Calculate food cost for a dish from ingredients.
 
     Args:
@@ -205,8 +200,7 @@ def manage_reservation(
     date: Optional[str] = None,
     time_slot: Optional[str] = None,
     reservation_id: Optional[str] = None,
-    special_requests: Optional[str] = None,
-) -> dict:
+    special_requests: Optional[str] = None) -> dict:
     """Manage restaurant reservations - create, view, cancel.
 
     Args:
@@ -269,8 +263,7 @@ def manage_reservation(
 
 @mcp.tool()
 def analyze_reviews(
-    reviews: list[str],
-) -> dict:
+    reviews: list[str]) -> dict:
     """Analyze customer reviews for sentiment, themes, and actionable insights.
 
     Args:
@@ -342,8 +335,7 @@ def analyze_reviews(
 @mcp.tool()
 def check_allergens(
     ingredients: list[str],
-    customer_allergens: Optional[list[str]] = None,
-) -> dict:
+    customer_allergens: Optional[list[str]] = None) -> dict:
     """Check dish ingredients against common allergen categories.
 
     Args:
