@@ -1,24 +1,134 @@
 {
   "name": "restaurant-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Built by MEOK AI Labs | https://meok.ai",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/restaurant-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "**Hospitality Intelligence**",
+  "version": "1.0.0",
   "tools": [
-    "optimize_menu",
-    "calculate_food_cost",
-    "manage_reservation",
-    "analyze_reviews",
-    "check_allergens"
-  ],
-  "categories": [
-    "Food & Beverage",
-    "Business"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "optimize_menu",
+      "description": "Analyze and optimize a menu for profitability.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "target_food_cost_pct": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    {
+      "name": "calculate_food_cost",
+      "description": "Calculate food cost for a dish from ingredients.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "ingredients": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "portions": {
+            "type": "integer"
+          },
+          "target_price": {
+            "type": "number",
+            "nullable": true
+          }
+        },
+        "required": [
+          "ingredients"
+        ]
+      }
+    },
+    {
+      "name": "manage_reservation",
+      "description": "Manage restaurant reservations - create, view, cancel.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "guest_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "party_size": {
+            "type": "integer"
+          },
+          "date": {
+            "type": "string",
+            "nullable": true
+          },
+          "time_slot": {
+            "type": "string",
+            "nullable": true
+          },
+          "reservation_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "special_requests": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "analyze_reviews",
+      "description": "Analyze customer reviews for sentiment, themes, and actionable insights.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "reviews": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "reviews"
+        ]
+      }
+    },
+    {
+      "name": "check_allergens",
+      "description": "Check dish ingredients against common allergen categories.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "ingredients": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "customer_allergens": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "required": [
+          "ingredients"
+        ]
+      }
+    }
+  ]
 }

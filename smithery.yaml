@@ -1,10 +1,64 @@
 name: restaurant-ai-mcp
-description: "MEOK AI Labs — Built by MEOK AI Labs | https://meok.ai"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/restaurant-ai-mcp
-license: MIT
-categories: [Food & Beverage, Business]
-tags: [restaurant, food-service, menu-management, hospitality, dining]
-runtime: python
-entrypoint: server.py
+description: '**Hospitality Intelligence**'
+version: 1.0.0
+tools:
+- name: optimize_menu
+  description: Analyze and optimize a menu for profitability.
+  parameters:
+  - name: items
+    type: array
+    required: true
+  - name: target_food_cost_pct
+    type: number
+    required: false
+- name: calculate_food_cost
+  description: Calculate food cost for a dish from ingredients.
+  parameters:
+  - name: ingredients
+    type: array
+    required: true
+  - name: portions
+    type: integer
+    required: false
+  - name: target_price
+    type: number
+    required: false
+- name: manage_reservation
+  description: Manage restaurant reservations - create, view, cancel.
+  parameters:
+  - name: action
+    type: string
+    required: true
+  - name: guest_name
+    type: string
+    required: false
+  - name: party_size
+    type: integer
+    required: false
+  - name: date
+    type: string
+    required: false
+  - name: time_slot
+    type: string
+    required: false
+  - name: reservation_id
+    type: string
+    required: false
+  - name: special_requests
+    type: string
+    required: false
+- name: analyze_reviews
+  description: Analyze customer reviews for sentiment, themes, and actionable insights.
+  parameters:
+  - name: reviews
+    type: array
+    required: true
+- name: check_allergens
+  description: Check dish ingredients against common allergen categories.
+  parameters:
+  - name: ingredients
+    type: array
+    required: true
+  - name: customer_allergens
+    type: array
+    required: false

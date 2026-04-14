@@ -6,6 +6,11 @@ Menu optimization, food cost calculation, reservation management,
 review analysis, and allergen checking.
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import time
 from datetime import datetime, timezone
 from typing import Optional
@@ -61,7 +66,7 @@ _RESERVATIONS: list[dict] = []
 @mcp.tool()
 def optimize_menu(
     items: list[dict],
-    target_food_cost_pct: float = 30.0) -> dict:
+    target_food_cost_pct: float = 30.0, api_key: str = "") -> dict:
     """Analyze and optimize a menu for profitability.
 
     Args:
@@ -69,6 +74,10 @@ def optimize_menu(
               Example: [{"name": "Caesar Salad", "price": 14.0, "food_cost": 3.50, "category": "starter"}]
         target_food_cost_pct: Target food cost percentage (industry standard 28-32%).
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
 
@@ -143,7 +152,7 @@ def optimize_menu(
 def calculate_food_cost(
     ingredients: list[dict],
     portions: int = 1,
-    target_price: Optional[float] = None) -> dict:
+    target_price: Optional[float] = None, api_key: str = "") -> dict:
     """Calculate food cost for a dish from ingredients.
 
     Args:
@@ -152,6 +161,10 @@ def calculate_food_cost(
         portions: Number of portions this recipe makes.
         target_price: Target menu price to calculate cost percentage.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
 
@@ -200,7 +213,7 @@ def manage_reservation(
     date: Optional[str] = None,
     time_slot: Optional[str] = None,
     reservation_id: Optional[str] = None,
-    special_requests: Optional[str] = None) -> dict:
+    special_requests: Optional[str] = None, api_key: str = "") -> dict:
     """Manage restaurant reservations - create, view, cancel.
 
     Args:
@@ -212,6 +225,10 @@ def manage_reservation(
         reservation_id: ID for cancel action.
         special_requests: Dietary needs, celebrations, etc.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
 
@@ -263,12 +280,16 @@ def manage_reservation(
 
 @mcp.tool()
 def analyze_reviews(
-    reviews: list[str]) -> dict:
+    reviews: list[str], api_key: str = "") -> dict:
     """Analyze customer reviews for sentiment, themes, and actionable insights.
 
     Args:
         reviews: List of review text strings to analyze.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
 
@@ -335,7 +356,7 @@ def analyze_reviews(
 @mcp.tool()
 def check_allergens(
     ingredients: list[str],
-    customer_allergens: Optional[list[str]] = None) -> dict:
+    customer_allergens: Optional[list[str]] = None, api_key: str = "") -> dict:
     """Check dish ingredients against common allergen categories.
 
     Args:
@@ -343,6 +364,10 @@ def check_allergens(
         customer_allergens: Specific allergens to check (e.g. gluten, dairy, nuts).
                           If omitted, checks all 8 major allergen categories.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade to pro tier."}
 
