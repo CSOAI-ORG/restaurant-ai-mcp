@@ -1,6 +1,6 @@
 {
   "name": "restaurant-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 \u0001",
+  "description": "MCP server for restaurant ai. Features optimize menu, calculate food cost, manage reservation. From MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
