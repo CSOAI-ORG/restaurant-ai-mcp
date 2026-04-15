@@ -1,6 +1,6 @@
 {
   "name": "restaurant-ai-mcp",
-  "description": "**Hospitality Intelligence**",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
   "version": "1.0.0",
   "tools": [
     {
@@ -10,10 +10,7 @@
         "type": "object",
         "properties": {
           "items": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
+            "type": "array"
           },
           "target_food_cost_pct": {
             "type": "number"
@@ -31,17 +28,13 @@
         "type": "object",
         "properties": {
           "ingredients": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
+            "type": "array"
           },
           "portions": {
             "type": "integer"
           },
           "target_price": {
-            "type": "number",
-            "nullable": true
+            "type": "number"
           }
         },
         "required": [
@@ -59,27 +52,22 @@
             "type": "string"
           },
           "guest_name": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "party_size": {
             "type": "integer"
           },
           "date": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "time_slot": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "reservation_id": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "special_requests": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           }
         },
         "required": [
@@ -94,10 +82,7 @@
         "type": "object",
         "properties": {
           "reviews": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "array"
           }
         },
         "required": [
@@ -112,17 +97,10 @@
         "type": "object",
         "properties": {
           "ingredients": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "array"
           },
           "customer_allergens": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
+            "type": "array"
           }
         },
         "required": [
