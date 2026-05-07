@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "restaurant-ai-mcp"
-version = "1.0.3"
+version = "1.0.4"
 readme = "README.md"
 description = "MCP server for restaurant ai. Features optimize menu, calculate food cost, manage reservation. From MEOK AI Labs."
 license = {file = "LICENSE"}
