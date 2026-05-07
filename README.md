@@ -1,3 +1,5 @@
+[![restaurant-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/restaurant-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/restaurant-ai-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/restaurant-ai-mcp)](https://github.com/CSOAI-ORG/restaurant-ai-mcp/stargazers)
