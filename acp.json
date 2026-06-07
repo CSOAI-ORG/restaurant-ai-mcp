@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "restaurant-ai-mcp",
+    "description": "Restaurant Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.4",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "restaurant-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "optimize_menu",
+      "calculate_food_cost",
+      "manage_reservation",
+      "analyze_reviews",
+      "check_allergens"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "restaurant-ai-mcp",
+  "description": "Restaurant Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/restaurant-ai-mcp.html",
+  "version": "1.0.4",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "optimize_menu",
+      "name": "Optimize Menu",
+      "description": "optimize_menu via restaurant-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "calculate_food_cost",
+      "name": "Calculate Food Cost",
+      "description": "calculate_food_cost via restaurant-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "manage_reservation",
+      "name": "Manage Reservation",
+      "description": "manage_reservation via restaurant-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "analyze_reviews",
+      "name": "Analyze Reviews",
+      "description": "analyze_reviews via restaurant-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "check_allergens",
+      "name": "Check Allergens",
+      "description": "check_allergens via restaurant-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
