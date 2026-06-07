@@ -76,3 +76,28 @@ MIT © [CSOAI-ORG](https://github.com/CSOAI-ORG)
 <p align="center">
   <sub>Built with 💜 by <a href="https://meok.ai">MEOK AI Labs</a> · UK Companies House 16939677</sub>
 </p>
+
+
+## Configuration
+
+Add to your `claude_desktop_config.json` (Claude Desktop) or your MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "restaurant-ai-mcp": {
+      "command": "uvx",
+      "args": ["restaurant-ai-mcp"]
+    }
+  }
+}
+```
+
+Or: `pip install restaurant-ai-mcp` then run the `restaurant-ai-mcp` command (stdio transport).
+
+## Examples
+
+Once configured, ask your assistant, for example:
+- "Use `optimize_menu` to …"
+- "Use `calculate_food_cost` to …"
+- "Use `manage_reservation` to …"

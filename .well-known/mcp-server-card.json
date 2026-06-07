@@ -1,0 +1,28 @@
+{
+  "name": "restaurant-ai-mcp",
+  "title": "Restaurant Ai Mcp",
+  "description": "MCP server for restaurant ai. Features optimize menu, calculate food cost, manage reservation. From MEOK AI Labs.",
+  "version": "1.0.4",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "optimize_menu"
+    },
+    {
+      "name": "calculate_food_cost"
+    },
+    {
+      "name": "manage_reservation"
+    },
+    {
+      "name": "analyze_reviews"
+    },
+    {
+      "name": "check_allergens"
+    }
+  ]
+}

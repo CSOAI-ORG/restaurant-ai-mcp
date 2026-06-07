@@ -1,0 +1,21 @@
+# restaurant-ai-mcp
+
+> MCP server for restaurant ai. Features optimize menu, calculate food cost, manage reservation. From MEOK AI Labs.
+
+MCP server by MEOK AI Labs. Framework: fastmcp. Transport: stdio.
+
+## Tools
+- optimize_menu
+- calculate_food_cost
+- manage_reservation
+- analyze_reviews
+- check_allergens
+
+## Install
+```
+pip install restaurant-ai-mcp
+```
+
+## Links
+- PyPI: https://pypi.org/project/restaurant-ai-mcp/
+- Docs: https://meok.ai
