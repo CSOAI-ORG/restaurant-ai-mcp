@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "restaurant-ai-mcp"
-version = "1.0.4"
+version = "1.0.8"
 readme = "README.md"
 description = "MCP server for restaurant ai. Features optimize menu, calculate food cost, manage reservation. From MEOK AI Labs."
 license = {file = "LICENSE"}
@@ -22,7 +22,7 @@ Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/restaurant-ai-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py"]
+only-include = ["auth_middleware.py", "server.py"]
 
 [project.scripts]
 restaurant_ai_mcp = "server:main"
